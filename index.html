@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html ng-app="show-hide">
+<html ng-app="show-hide"> <!-- In this file I am learning how to make items like buttons and inputs disappear until a user clicks a button to use those items -->
 	<head>
 		<title>Show Hide</title>
 	</head>
 	<body ng-controller="MainController">
+
+	<button ng-click="toggle()">Toggle Form</button>
+	<!-- another way to do it that is shorthand, doesn't need if statement in controller.js, but not as explicit, sometimes being explicit is better
+	<button ng-click="showForm = !showForm">Toggle Form</button> -->
+
 
 	<div ng-show="showForm">
 		<input type="text" placeholder="email">
@@ -11,6 +16,7 @@
 		<button>Login</button>
 	</div>
 
+		<!-- order of inclusion, MAKE SURE angular is first! otherwise lots of problems with included js files, same goes for things like javascript and bootstrap files -->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
